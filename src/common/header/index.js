@@ -60,7 +60,7 @@ class Header extends Component{
 
 let mapStateToProps=(state)=>{
     return{
-        focused : state.focused,
+        focused : state.header.focused,
     }
 }
 let mapDispatchToProps=(dispatch)=>{
