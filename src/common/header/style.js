@@ -48,6 +48,28 @@ export let NvaItem=styled.div`
     font-size:17px;
     
 `
+export let SearchWrapper=styled.div`
+
+    float:left;
+    position:relative;
+
+
+
+    .iconfont{
+        position:absolute;
+        right: 5px;
+        bottom: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius:50%;
+        text-align:center;
+        &.focused{
+           background : #666 
+        }
+    }
+`
+
 export let NvaSearch=styled.input.attrs({
     placeholder : "搜索"
 })`
@@ -55,16 +77,37 @@ export let NvaSearch=styled.input.attrs({
     &::placeholder{
         color: #999;
     }
-    width: 240px;
+    width: 160px;
     height: 38px;
     margin-top: 9px;
     border-radius: 19px;
-    padding:0 20px;
+    padding:0 30px 0 20px;
     box-sizing:border-box;
 	outline:none;  
     border: none;
     background-color: #eee;
     font-size:14px;
+    &.focused{
+        width: 240px;
+    }
+    &.fade-enter{
+        transition: all 0.2s ease-out;
+
+        width:160px;
+     
+    }
+    &.fade-enter-active{
+        width: 240px;
+
+    }
+    &.fade-exit{
+        width:240px;
+        transition: all 0.2s ease-out;
+    }
+    &.fade-exit-active{
+        width: 160px;
+
+    }
 
 `
 export let Addition=styled.div`
