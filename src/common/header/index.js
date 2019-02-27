@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 import { CSSTransition } from 'react-transition-group';
+import {connect} from 'react-redux'
+
 
 import {
     HeaderWrapper,
@@ -33,13 +35,13 @@ class Header extends Component{
                     <NvaItem className="right"><span className="iconfont">&#xe636;</span></NvaItem>
                     <SearchWrapper>
                         <CSSTransition 
-                            in={this.state.focused}
+                            in={this.props.focused}
                             timeout={200}
                             classNames="fade"
                         >
-                            <NvaSearch  onFocus={this.handleInputFocus} onBlur={this.handleInputBlur} className={this.state.focused ? "focused" : "" }/>
+                            <NvaSearch  onFocus={this.props.handleInputFocus} onBlur={this.props.handleInputBlur} className={this.props.focused ? "focused" : "" }/>
                         </CSSTransition>
-                        <span className={this.state.focused ? "iconfont focused" : "iconfont"}>&#xe6e4;</span>
+                        <span className={this.props.focused ? "iconfont focused" : "iconfont"}>&#xe6e4;</span>
                     </SearchWrapper>
       
            
@@ -52,15 +54,34 @@ class Header extends Component{
         );
     }
 
-    handleInputFocus=()=>{
-        this.setState({
-            focused:true,
-        })
-    }
-    handleInputBlur=()=>{
-        this.setState({
-            focused:false
-        })
+
+
+}
+
+let mapStateToProps=(state)=>{
+    return{
+        focused : state.focused,
     }
 }
-export default Header
+let mapDispatchToProps=(dispatch)=>{
+    return{
+        handleInputFocus : ()=>{
+            let action={
+                type: "search_focus",
+                focused:true
+            }
+         
+
+            dispatch(action);
+        },
+        handleInputBlur : ()=>{
+       
+            let action={
+                type: "search_blur",
+                focused:false
+            }
+            dispatch(action);
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Header);
