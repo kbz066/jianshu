@@ -20,12 +20,7 @@ import {
 
 class Header extends Component{
 
-    constructor(){
-        super();
-        this.state={
-            focused:false,
-        }
-    }
+
     render(){
         return(
             <HeaderWrapper>
@@ -61,8 +56,10 @@ class Header extends Component{
 }
 
 let mapStateToProps=(state)=>{
+
+    console.log()
     return{
-        focused : state.header.focused,
+        focused : state.getIn(["header","focused"]),
     }
 }
 let mapDispatchToProps=(dispatch)=>{

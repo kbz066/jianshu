@@ -1,24 +1,22 @@
 
 
-import {constant} from './publicExport'
+import { constant } from './publicExport'
+import { fromJS } from 'immutable'
 
 
+let defaultState = fromJS({
+    focused: false,
+})
+export default (state = defaultState, action) => {
 
-let defaultState={
-    focused:false,
-}
-export default (state=defaultState,action)=>{
+    if (action.type === constant.SEARCH_FOCUS) {
+        
 
-    if(action.type===constant.SEARCH_FOCUS){
-        let newState=JSON.parse(JSON.stringify(state));
-        newState.focused=action.focused;
-        return newState;
+        return state.set("focused",action.focused);
     }
 
-    if(action.type===constant.SEARCH_BLUR){
-        let newState=JSON.parse(JSON.stringify(state));
-        newState.focused=action.focused;
-        return newState;
+    if (action.type === constant.SEARCH_BLUR) {
+        return state.set("focused",action.focused);
     }
     return state;
 }
