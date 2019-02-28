@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import { CSSTransition } from 'react-transition-group';
 import {connect} from 'react-redux'
+import {actionCreators}  from './store/publicExport'
+
 
 
 import {
@@ -66,21 +68,15 @@ let mapStateToProps=(state)=>{
 let mapDispatchToProps=(dispatch)=>{
     return{
         handleInputFocus : ()=>{
-            let action={
-                type: "search_focus",
-                focused:true
-            }
+
          
 
-            dispatch(action);
+            dispatch(actionCreators.searchFocus());
         },
         handleInputBlur : ()=>{
        
-            let action={
-                type: "search_blur",
-                focused:false
-            }
-            dispatch(action);
+        
+           dispatch(actionCreators.searchBlur());
         }
     }
 }
