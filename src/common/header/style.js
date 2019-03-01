@@ -3,14 +3,14 @@ import logoPath from '../../img/logo.png'
 
 
 
-export let HeaderWrapper=styled.div`
+export let HeaderWrapper = styled.div`
     position:relative;
     height: 56px;
     border:1px solid #f0f0f0;
 `
 
-export let Logo=styled.a.attrs({
-    href:"/"
+export let Logo = styled.a.attrs({
+    href: "/"
 })`
     height: 56px;
     width: 100px;
@@ -21,15 +21,14 @@ export let Logo=styled.a.attrs({
     background-image:url(${logoPath});
     background-size:contain;
 `
-export let Nva=styled.div`
+export let Nva = styled.div`
     
     margin: 0 auto;
     width: 960px;
     height: 100%;
     
-
 `
-export let NvaItem=styled.div`
+export let NvaItem = styled.div`
     &.left{
         float:left;
     }
@@ -48,7 +47,7 @@ export let NvaItem=styled.div`
     font-size:17px;
     
 `
-export let SearchWrapper=styled.div`
+export let SearchWrapper = styled.div`
 
     float:left;
     position:relative;
@@ -69,9 +68,57 @@ export let SearchWrapper=styled.div`
         }
     }
 `
+export let SearchInfo = styled.div`
+    position:absolute;
+    left: 0;
+    top: 56px;
+    width: 250px;
+    
+    padding: 20px 20px 10px;
+    box-shadow:0px 0px  1px  #aaa;
 
-export let NvaSearch=styled.input.attrs({
-    placeholder : "搜索"
+
+
+`
+export let SearchInfoTitle = styled.div`
+
+    display:flex;
+    font-size: 13px;
+    color: #969696;
+    justify-content:space-between;
+    background-color: transparent;
+
+`
+export let SearchInfoSwitch = styled.a`
+
+    font-size: 14px;
+    color: #969696
+
+`
+
+export let SearchInfoList = styled.div`
+
+
+   
+`
+
+export let SearchInfoItem = styled.a`
+
+    float:left;
+    margin-right:10px;
+    margin-top: 10px;
+    line-height:20px;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: #787878;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+   
+`
+
+
+export let NvaSearch = styled.input.attrs({
+    placeholder: "搜索"
 })`
 
     &::placeholder{
@@ -110,13 +157,13 @@ export let NvaSearch=styled.input.attrs({
     }
 
 `
-export let Addition=styled.div`
+export let Addition = styled.div`
     position: absolute;
     height: 56px;
     right: 0;
     top: 0;
 `
-export let Button=styled.div`
+export let Button = styled.div`
     float:right;
     line-height:38px;
     margin-top:9px;

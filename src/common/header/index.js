@@ -13,6 +13,11 @@ import {
     NvaItem,
     NvaSearch,
     SearchWrapper,
+    SearchInfo,
+    SearchInfoTitle,
+    SearchInfoSwitch,
+    SearchInfoList,
+    SearchInfoItem,
     Addition,
     Button
 } from './style'
@@ -39,6 +44,25 @@ class Header extends Component{
                             <NvaSearch  onFocus={this.props.handleInputFocus} onBlur={this.props.handleInputBlur} className={this.props.focused ? "focused" : "" }/>
                         </CSSTransition>
                         <span className={this.props.focused ? "iconfont focused" : "iconfont"}>&#xe6e4;</span>
+
+                        <SearchInfo>
+                            <SearchInfoTitle>
+                                热门搜索
+                                <SearchInfoSwitch>换一批</SearchInfoSwitch>
+                            </SearchInfoTitle>
+
+                            <SearchInfoList>
+                                <SearchInfoItem>java</SearchInfoItem>
+                                <SearchInfoItem>c语言</SearchInfoItem>
+
+                                <SearchInfoItem>JavaScript</SearchInfoItem>
+
+                                <SearchInfoItem>c++</SearchInfoItem>
+                                <SearchInfoItem>flutter</SearchInfoItem>
+
+
+                            </SearchInfoList>
+                        </SearchInfo>
                     </SearchWrapper>
       
            
