@@ -57,7 +57,7 @@ export let SearchWrapper = styled.div`
     .iconfont{
         position:absolute;
         right: 5px;
-        bottom: 5px;
+        bottom: 4px;
         width: 30px;
         height: 30px;
         line-height: 30px;
