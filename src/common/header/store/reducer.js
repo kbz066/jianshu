@@ -30,6 +30,9 @@ export default (state = defaultState, action) => {
 
         case constant.GET_HOT_LIST_SUCCEEDED:
         return state.set("hotList",action.hotList).set("totalPage",action.totalPage);
+        case  constant.CHANGE_PAGE:
+        return state.set("page",action.page);
+
 
         default :
         return state;

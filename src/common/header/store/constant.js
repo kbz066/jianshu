@@ -6,3 +6,5 @@ export const MOUSE_LEAVE="header/MOUSE_LEAVE"
 export const GET_HOT_LIST="header/GET_HOT_LIST"
 export const GET_HOT_LIST_SUCCEEDED="header/GET_HOT_LIST_SUCCEEDED"
 
+export const CHANGE_PAGE="header/CHANGE_PAGE"
+

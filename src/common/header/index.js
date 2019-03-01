@@ -33,7 +33,7 @@ class Header extends Component {
             let totalPage=this.props.totalPage;
             let newList=[];
             if(hotList.length>0){
-                newList=hotList.slice(page*10,(page+1)*10);
+                newList=hotList.slice((page-1)*10,(page)*10);
             }
     
 
@@ -43,7 +43,10 @@ class Header extends Component {
                 <SearchInfo onMouseEnter={this.props.handleMouseEnter} onMouseLeave={this.props.handleMouseLeave}>
                     <SearchInfoTitle>
                         热门搜索
-                    <SearchInfoSwitch onClick={()=>this.props.handleChangePage(page,totalPage)}>换一批</SearchInfoSwitch>
+                    <SearchInfoSwitch onClick={()=>this.props.handleChangePage(page,totalPage,this.iconSpin)}>
+                    <span ref={(spin)=>{this.iconSpin=spin}} className="iconfont  spin">&#xe615;</span>
+                        换一批
+                    </SearchInfoSwitch>
                     </SearchInfoTitle>
     
                     <SearchInfoList>
@@ -83,7 +86,7 @@ class Header extends Component {
                         >
                             <NvaSearch onFocus={()=>this.props.handleInputFocus(this.props.hotList)} onBlur={this.props.handleInputBlur} className={this.props.focused ? "focused" : ""} />
                         </CSSTransition>
-                        <span className={this.props.focused ? "iconfont focused" : "iconfont"}>&#xe6e4;</span>
+                        <span className={this.props.focused ? "iconfont focused iconSearch" : "iconfont iconSearch"}>&#xe6e4;</span>
                         {
                             this.getHotList()
                         }
@@ -119,7 +122,7 @@ let mapDispatchToProps = (dispatch) => {
     return {
         handleInputFocus: (hotList) => {
 
-            if(hotList.size==0){
+            if(hotList.size===0){
                 dispatch(actionCreators.getHotList());
             }
 
@@ -137,8 +140,28 @@ let mapDispatchToProps = (dispatch) => {
         handleMouseLeave:()=>{
             dispatch(actionCreators.mouseLeave());
         },
-        handleChangePage:(page,totalPage)=>{
-            console.log(page,totalPage)
+        handleChangePage:(page,totalPage,icon)=>{
+
+            let anger=icon.style.transform.replace(/[^0-9]/ig,"");
+            if(anger){
+                anger=parseInt(anger)
+            }else{
+                anger=0;
+            }
+
+   
+
+           icon.style.transform = 'rotate('+(parseInt(anger)+360)+'deg)';
+
+
+            if(page+1>totalPage){
+                dispatch(actionCreators.changePage(1));
+            }else{
+                dispatch(actionCreators.changePage(page+1));
+
+            }
+            
+    
         }
     }
 }

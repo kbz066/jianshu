@@ -3,7 +3,7 @@ import logoPath from '../../img/logo.png'
 
 
 
-export let HeaderWrapper = styled.div`
+export let HeaderWrapper = styled.div `
     position:relative;
     height: 56px;
     border:1px solid #f0f0f0;
@@ -11,7 +11,8 @@ export let HeaderWrapper = styled.div`
 
 export let Logo = styled.a.attrs({
     href: "/"
-})`
+})
+`
     height: 56px;
     width: 100px;
     
@@ -21,14 +22,14 @@ export let Logo = styled.a.attrs({
     background-image:url(${logoPath});
     background-size:contain;
 `
-export let Nva = styled.div`
+export let Nva = styled.div `
     
     margin: 0 auto;
     width: 960px;
     height: 100%;
     
 `
-export let NvaItem = styled.div`
+export let NvaItem = styled.div `
     &.left{
         float:left;
     }
@@ -47,14 +48,14 @@ export let NvaItem = styled.div`
     font-size:17px;
     
 `
-export let SearchWrapper = styled.div`
+export let SearchWrapper = styled.div `
 
     float:left;
     position:relative;
 
 
 
-    .iconfont{
+    .iconSearch{
         position:absolute;
         right: 5px;
         bottom: 4px;
@@ -68,7 +69,7 @@ export let SearchWrapper = styled.div`
         }
     }
 `
-export let SearchInfo = styled.div`
+export let SearchInfo = styled.div `
     position:absolute;
     left: 0;
     top: 56px;
@@ -80,7 +81,7 @@ export let SearchInfo = styled.div`
 
 
 `
-export let SearchInfoTitle = styled.div`
+export let SearchInfoTitle = styled.div `
 
     display:flex;
     font-size: 13px;
@@ -89,20 +90,32 @@ export let SearchInfoTitle = styled.div`
     background-color: transparent;
 
 `
-export let SearchInfoSwitch = styled.a`
+export let SearchInfoSwitch = styled.a `
 
     font-size: 14px;
-    color: #969696
+    color: #969696;
+  
+    .spin{
 
+       font-size:12px;
+       margin-right:2px;
+       margin-top:2px;
+       display: block;
+       float:left;
+       transition: all 0.2s ease-in;
+       transform:rotate(0deg);
+       transform-origin: center center;
+
+    }
 `
 
-export let SearchInfoList = styled.div`
+export let SearchInfoList = styled.div `
 
 
    
 `
 
-export let SearchInfoItem = styled.a`
+export let SearchInfoItem = styled.a `
 
     float:left;
     margin-right:10px;
@@ -115,11 +128,10 @@ export let SearchInfoItem = styled.a`
     border-radius: 3px;
    
 `
-
-
 export let NvaSearch = styled.input.attrs({
-    placeholder: "搜索"
-})`
+ placeholder: "搜索"
+})
+`
 
     &::placeholder{
         color: #999;
@@ -157,13 +169,13 @@ export let NvaSearch = styled.input.attrs({
     }
 
 `
-export let Addition = styled.div`
+export let Addition = styled.div `
     position: absolute;
     height: 56px;
     right: 0;
     top: 0;
 `
-export let Button = styled.div`
+export let Button = styled.div `
     float:right;
     line-height:38px;
     margin-top:9px;

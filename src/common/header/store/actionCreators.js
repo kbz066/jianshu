@@ -24,3 +24,9 @@ export let getHotList=()=>({
     type: constant.GET_HOT_LIST,
 
 })
+
+export let changePage=(page)=>({
+    type: constant.CHANGE_PAGE,
+    page
+})
+
