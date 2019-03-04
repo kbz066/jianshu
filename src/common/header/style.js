@@ -78,7 +78,7 @@ export let SearchInfo = styled.div `
     padding: 20px 20px 10px;
     box-shadow:0px 0px  1px  #aaa;
 
-
+    background-color:#fff;
 
 `
 export let SearchInfoTitle = styled.div `
@@ -111,7 +111,7 @@ export let SearchInfoSwitch = styled.a `
 
 export let SearchInfoList = styled.div `
 
-
+    overflow:hidden
    
 `
 
