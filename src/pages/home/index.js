@@ -6,6 +6,8 @@ import Recommend from './components/Recommend'
 import Topic from './components/Topic'
 
 
+import {connect} from 'react-redux'
+import * as actionCreators from './store/actionCreators'
 
 
 
@@ -40,5 +42,20 @@ class Home extends Component{
             </HomeWrapper>
         )
     }
+    componentDidMount(){
+        this.props.changeHomeData()
+    }
+
+
 }
-export default Home;
+
+
+
+
+let mapDispatchToProps=(dispatch)=>({
+    changeHomeData:()=>{
+        dispatch(actionCreators.getHomeData())
+    }
+})
+
+export default connect(null,mapDispatchToProps)(Home);

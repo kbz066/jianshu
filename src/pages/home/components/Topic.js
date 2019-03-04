@@ -32,8 +32,6 @@ let mapStateToProps=(state)=>({
     list:state.get("home").get("topicList"),
 })
 
-let mapDispatchToProps=(dispatch)=>({
 
-})
 
 export default connect(mapStateToProps,null)(Topic)
