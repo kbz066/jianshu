@@ -62,10 +62,17 @@ export let TopicItem=styled.div`
 export let ListWrapper=styled.div`
    width: 625px;
  
-   background-color:red;
+
  
 `
 export let ListItem=styled.div`
   
- 
+ h3{
+    font-size:18px;
+    font-weight: bolder;
+   
+ }
+ p{
+    font-size:13px;
+ }
 `
