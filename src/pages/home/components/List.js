@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { ListWrapper, ListItem, ListInfo } from '../style'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -13,16 +15,20 @@ class List extends Component {
                     this.props.list.map((item) => {
 
                         return (
-                            <ListItem key={item.get("id")}>
 
-                                <ListInfo>
-                                    <h3>{item.get("title")}</h3>
-                                    <p>{item.get("desc") }</p>
-                                </ListInfo>
+                            <Link key={item.get("id")} to={"/detail"}>
+                                <ListItem >
 
-                                <img src={item.get("imgUrl")} />
+                                    <ListInfo>
+                                        <h3>{item.get("title")}</h3>
+                                        <p>{item.get("desc")}</p>
+                                    </ListInfo>
 
-                            </ListItem>
+                                    <img src={item.get("imgUrl")} />
+
+                                </ListItem>
+                            </Link>
+
                         )
                     })
                 }

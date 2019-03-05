@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux'
 import { actionCreators } from './store/publicExport'
 
+import {Link} from 'react-router-dom'
 
 
 import {
@@ -76,7 +77,13 @@ class Header extends Component {
                 <Nva>
                     <NvaItem className="left active"><span className="homeicon">&#xe60c;</span>首页</NvaItem>
                     <NvaItem className="left"><span className="iconfont">&#xe663;</span>下载App</NvaItem>
-                    <NvaItem className="right">登录</NvaItem>
+
+                    {
+                        this.props.login?        
+                        
+                        <NvaItem className="right">注册</NvaItem> :  
+                        <Link to="/login"><NvaItem className="right">登录</NvaItem></Link>
+                    }
                     <NvaItem className="right"><span className="iconfont">&#xe636;</span></NvaItem>
                     <SearchWrapper>
                         <CSSTransition
@@ -115,6 +122,7 @@ let mapStateToProps = (state) => {
         hotList:state.getIn(["header", "hotList"]),
         page:state.getIn(["header", "page"]),
         totalPage:state.getIn(["header", "totalPage"]),
+        login:state.get("login").get("login")
 
     }
 }

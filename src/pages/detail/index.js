@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import * as actionCreators from './store/actionCreators'
+
 
 import { DetailWrapper, Header, Content } from './style'
 
@@ -14,6 +16,11 @@ class Detail extends Component {
             </DetailWrapper>
         )
     }
+
+    componentDidMount(){
+        this.props.changeHDetailData()
+    }
+
 }
 
 let maoStateToProps = (state) => ({
@@ -21,4 +28,10 @@ let maoStateToProps = (state) => ({
     content: state.get("detail").get("content"),
 })
 
-export default connect(maoStateToProps, null)(Detail)
+let mapDispatchToProps=(dispatch)=>({
+    changeHDetailData:()=>{
+        dispatch(actionCreators.getDetailData())
+    }
+})
+
+export default connect(maoStateToProps,mapDispatchToProps )(Detail)

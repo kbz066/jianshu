@@ -42,7 +42,8 @@ class Home extends Component{
             </HomeWrapper>
         )
     }
-    componentDidMount(){
+    componentWillReceiveProps(){
+        console.log("object          componentDidMount ")
         this.props.changeHomeData()
     }
 
