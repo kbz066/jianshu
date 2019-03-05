@@ -105,3 +105,5 @@ export let RecommendItem = styled.div`
    background-size:contain;
    background-image:url(${(props) => props.imgUrl})
 `
+
+

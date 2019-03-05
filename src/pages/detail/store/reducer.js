@@ -1,0 +1,28 @@
+import * as  constant from './constant'
+
+import { fromJS } from 'immutable'
+
+
+let defaultState = fromJS({
+	title:"玩转Win10---推荐8款好用的软件",
+	content:'<img src="https://upload-images.jianshu.io/upload_images/1953972-b240b357414ed7c8?imageMogr2/auto-orient/strip%7CimageView2/2/w/956/format/webp"/><p>影音必备！不要看它界面很简单，其实它的功能很强大！potplayer播放器可以完美播放多种音频、视频格式和DVD、VCD等媒体格式，并且无需解码。它还可导入字幕、多倍速播放、录制视频、用作高带宽网络上的IPv4或IPv6单播或多播的视频服务器，免费无广告！谁用谁知道！</p><p>在使用Win10电脑时，有时候，我们需要顺手记点东西，或者是一句话、一个电话号码，或者某个稍纵即逝的灵感，这时候Win10自带的便签(Sticky Notes)应用就很方便。无需在意格式，只要能即时地把信息记下就行。我们可以很方便地把这些贴纸一样的小便签拖放到桌面任意位置，方便随手记东西</p><p>SumatraPDF是一个 界面简洁、操作方便的PDF阅读工具。它支持各种高低PDF格式，支持PDF旋转、缩放、文字选择以及截图等功能。</p>',
+
+})
+export default (state = defaultState, action) => {
+
+
+
+	switch (action.type) {
+
+
+		default:
+			return state;
+
+	}
+
+
+
+
+
+
+}

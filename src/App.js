@@ -4,6 +4,7 @@ import {IconFont} from "./iconfont/iconfont"
 import Header from './common/header/index'
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import Home from './pages/home/index'
+import Detail from './pages/detail/index'
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Switch>
          
             <Route exact path="/" component={Home}></Route>
+            <Route exact path="/detail" component={Detail}></Route>
           </Switch>
         </BrowserRouter>
       </div>

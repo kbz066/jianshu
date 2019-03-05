@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
+import { DetailWrapper, Header, Content } from './style'
 
-class Detail extends Component{
-    render(){
+class Detail extends Component {
+    render() {
         return (
-            <div>Detail</div>
+            <DetailWrapper>
+                <Header>{this.props.title}</Header>
+                <Content dangerouslySetInnerHTML={{__html:this.props.content}}>
+                
+                </Content>
+            </DetailWrapper>
         )
     }
 }
-export default Detail
+
+let maoStateToProps = (state) => ({
+    title: state.get("detail").get("title"),
+    content: state.get("detail").get("content"),
+})
+
+export default connect(maoStateToProps, null)(Detail)
